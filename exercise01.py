@@ -1,8 +1,13 @@
 #!/usr/bin/python
+
 import os
-path = os.getcwd()
-path = path.strip(os.sep)
-path_components = path.split(os.sep)
-if '' in path_components :
-    path_components.remove('')
-print(path_components)
+def get_path_components():
+    path = os.getcwd()
+    path = path.strip(os.sep)
+    path_components = path.split(os.sep)
+    while '' in path_components :
+        path_components.remove('')
+    return path_components
+
+
+print(get_path_components())
